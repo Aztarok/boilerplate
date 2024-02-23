@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import Checkout from "@/app/subscription/Checkout";
 
 const Price = () => {
     const prices = [
@@ -15,7 +16,8 @@ const Price = () => {
                 "Improved communication",
                 "Enhanced Collaboration"
             ],
-            amount: 10
+            amount: 10,
+            priceId: "price_1OmpdMF0VaBw48XtWFUfyjKb"
         },
         {
             title: "Pro",
@@ -27,7 +29,8 @@ const Price = () => {
                 "Improved communication",
                 "Enhanced Collaboration"
             ],
-            amount: 20
+            amount: 20,
+            priceId: "price_1OmpdnF0VaBw48XtMKayiDzH"
         },
         {
             title: "Enterprise",
@@ -39,7 +42,8 @@ const Price = () => {
                 "Improved communication",
                 "Enhanced Collaboration"
             ],
-            amount: 100
+            amount: 100,
+            priceId: "price_1OmpeJF0VaBw48XtlprcqIXG"
         }
     ];
     return (
@@ -87,9 +91,7 @@ const Price = () => {
                                     );
                                 })}
                             </div>
-                            <Button variant="goldHover" className="w-full">
-                                Getting Started
-                            </Button>
+                            <Checkout priceId={price.priceId} />
                         </div>
                     );
                 })}
