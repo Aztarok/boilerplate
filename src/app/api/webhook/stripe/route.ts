@@ -21,7 +21,8 @@ export async function POST(req: any) {
             return Response.json({ error: `Webhook Error ${err?.message!}` });
         }
         switch (event.type) {
-            case "customer.subscription.deleted":
+            case "invoice.payment_succeeded":
+                console.log(event.data.object);
                 break;
             default:
                 console.log(`Unhandled event type ${event.type}`);
